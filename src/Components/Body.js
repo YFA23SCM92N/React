@@ -55,6 +55,7 @@ export const Body = () => {
                         setFilteredListOfRestaurants(filteredRestaurants);
                         console.log(filteredRestaurants);
                     }}>Search</button> 
+                    
                 </div>
                 <button 
                     className="filter-btn" 
