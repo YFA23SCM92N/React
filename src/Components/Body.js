@@ -19,12 +19,12 @@ export const Body = () => {
 
     async function fetchData () {
         const data = await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+            "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
           );
           const json = await data.json();
-          console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+          //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
 
-          console.log(resList);
+          //console.log(resList);
 
           // Optional Chaining
           const restaurantList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
@@ -37,7 +37,7 @@ export const Body = () => {
     if(filteredListOfRestaurants.length === 0)
         return <Shimmer />
 
-    console.log("hello");
+    //console.log("hello");
 
     return (
         <div className="body">
@@ -62,8 +62,8 @@ export const Body = () => {
                     onClick={() => {
                         // filter data
                         const filteredList = 
-                            resList.filter((res) => res.info.avgRating > 4.2)
-                        setListOfRestaurants(filteredList)
+                        listOfRestaurants.filter((res) => res.info.avgRating > 4.3)
+                            setFilteredListOfRestaurants(filteredList)
                         console.log(listOfRestaurants)
                     }
                 }
