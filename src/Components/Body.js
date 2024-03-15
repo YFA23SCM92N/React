@@ -2,6 +2,7 @@ import RestaurantCardComponent from "./RestaurantCard";
 import {resList} from "../utils/mockData";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 export const Body = () => {
@@ -34,9 +35,17 @@ export const Body = () => {
 
     }
 
+    const onlineStatus = useOnlineStatus();
+
     // Shimmer UI
     if(filteredListOfRestaurants.length === 0)
         return <Shimmer />
+
+    if(onlineStatus == false){
+        return (
+            <h1>Looks like you're offline!! Please check your connection</h1>
+        )
+    }
 
     //console.log("hello");
 
