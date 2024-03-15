@@ -8,7 +8,7 @@ const RestaurantMenu = () => {
 
     const {resId} = useParams();
 
-    console.log(resId);
+    //console.log(resId);
 
     const [resInfo, setResInfo] = useState(null);
 

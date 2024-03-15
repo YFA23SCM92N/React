@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YFA23SCM92N/React.git"
+    "url": "git+https://github.com/YaswanthMahesh/React.git"
   },
   "keywords": [],
   "author": "yashu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YFA23SCM92N/React/issues"
+    "url": "https://github.com/YaswanthMahesh/React/issues"
   },
-  "homepage": "https://github.com/YFA23SCM92N/React#readme",
+  "homepage": "https://github.com/YaswanthMahesh/React#readme",
   "devDependencies": {
     "parcel": "^2.11.0",
     "process": "^0.11.10"
