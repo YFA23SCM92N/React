@@ -30,6 +30,7 @@ export const Body = () => {
           const restaurantList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
           setFilteredListOfRestaurants(restaurantList);
           setListOfRestaurants(restaurantList);
+          console.log(restaurantList);
 
     }
 
