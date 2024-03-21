@@ -51,15 +51,15 @@ export const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter">
-                <div className="search">
+            <div className="filter flex">
+                <div className="search m-4 p-4">
                     <input type="text" 
-                           className="search-box" 
+                           className=" border border-solid border-black" 
                            value = {searchText} 
                            onChange={(e) => {
                                 setSearchText(e.target.value);
                             }} />
-                    <button onClick={() => {
+                    <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
                         var filteredRestaurants = 
                             listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()));
                         setFilteredListOfRestaurants(filteredRestaurants);
@@ -67,22 +67,25 @@ export const Body = () => {
                     }}>Search</button> 
                     
                 </div>
-                <button 
-                    className="filter-btn" 
-                    onClick={() => {
-                        // filter data
-                        const filteredList = 
-                        listOfRestaurants.filter((res) => res.info.avgRating > 4.3)
-                            setFilteredListOfRestaurants(filteredList)
-                        console.log(listOfRestaurants)
+                <div className="search m-4 p-4 items-center">
+                    <button 
+                        className="filter-btn px-4 py-2 m-4 bg-gray-100 rounded-lg" 
+                        onClick={() => {
+                            // filter data
+                            const filteredList = 
+                            listOfRestaurants.filter((res) => res.info.avgRating > 4.3)
+                                setFilteredListOfRestaurants(filteredList)
+                            console.log(listOfRestaurants)
+                        }
                     }
-                }
-                >
-                    Top Rated Restaurants
-                </button>
+                    >
+                        Top Rated Restaurants
+                    </button>
+                </div>
+                
             </div>
 
-            <div className="res-container">
+            <div className=" flex flex-wrap">
                 { filteredListOfRestaurants.map(restaurant => <RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>)}
             </div>
         </div>

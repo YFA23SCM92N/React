@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./Components/Body";
@@ -7,8 +7,7 @@ import About from "./Components/About";
 import Contact from "./Components/Contact";
 import Error from "./Components/Error";
 import RestaurantMenu from "./Components/RestaurantMenu";
-import { createBrowserRouter, Outlet, RouterProvider, Routes } from "react-router-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import RestaurantMenu from "./Components/RestaurantMenu";
 //import Grocery from "./Components/Grocery";
 
@@ -37,7 +36,9 @@ import RestaurantMenu from "./Components/RestaurantMenu";
     // Lazy Loading
     // On Demand Loading
 
-const Grocery = lazy(() => import("./Components/Grocery"));
+//const Grocery = lazy(() => displayGrocery(import("./Components/LazyLoadComponent")));
+
+const Grocery = lazy(() => (import("./Components/Grocery")))
 
 
 
@@ -79,33 +80,14 @@ const appRouter = createBrowserRouter([
         ],
         errorElement: <Error />
     },
-])
+]);
+
+// function displayGrocery(promise){
+//     return new Promise(resolve => {
+//         setTimeout(resolve, 2000);
+//     }).then(() => promise);
+// }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />)
-
-
-
-// const AppLayout = () => {
-//     return (
-//         <div className="app">
-//             <Header />
-//                 <Routes>
-//                     <Route exact path="/" element={<Body />} />
-//                     <Route path="/about" element={<About />} />
-//                     <Route path="/contact" element={<Contact />} />
-//                     <Route path="/restaurants/:resId" element={<RestaurantMenu />} />
-//                 <Route path="*" element={<Error />} />
-//                 </Routes>
-//         </div>
-//     );
-// };
-
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-
-// root.render(
-//     <BrowserRouter>
-//         <AppLayout />
-//     </BrowserRouter>
-// );
