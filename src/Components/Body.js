@@ -1,4 +1,4 @@
-import RestaurantCardComponent from "./RestaurantCard";
+import RestaurantCardComponent, { withPromotedLabel } from "./RestaurantCard";
 import {resList} from "../utils/mockData";
 import {useState,useEffect} from "react";
 import Shimmer from "./Shimmer";
@@ -13,6 +13,8 @@ export const Body = () => {
     const [filteredListOfRestaurants, setFilteredListOfRestaurants] = useState([]);
 
     const [searchText, setSearchText] = useState("")
+
+    const RestaurantCardWithLabel = withPromotedLabel(RestaurantCardComponent);
 
     useEffect( () => {
         fetchData();
@@ -86,7 +88,12 @@ export const Body = () => {
             </div>
 
             <div className=" flex flex-wrap">
-                { filteredListOfRestaurants.map(restaurant => <RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>)}
+                { filteredListOfRestaurants.map(restaurant => 
+                    (restaurant.info.sla.deliveryTime < 22) ? 
+                        <RestaurantCardWithLabel key={restaurant.info.id} resData = {restaurant}/>
+                   :
+                        <RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>
+                )}
             </div>
         </div>
     )
