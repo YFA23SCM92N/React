@@ -1,9 +1,9 @@
 import RestaurantCardComponent, { withPromotedLabel } from "./RestaurantCard";
 import {resList} from "../utils/mockData";
-import {useState,useEffect} from "react";
+import {useState,useEffect, useContext} from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
-
+import UserContext from "../utils/UserContext";
 
 export const Body = () => {
 
@@ -14,7 +14,10 @@ export const Body = () => {
 
     const [searchText, setSearchText] = useState("")
 
-    const RestaurantCardWithLabel = withPromotedLabel(RestaurantCardComponent);
+    const {setUserName, loggedInUser} = useContext(UserContext);
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCardComponent);
+
 
     useEffect( () => {
         fetchData();
@@ -53,10 +56,12 @@ export const Body = () => {
 
     return (
         <div className="body">
-            <div className="filter flex">
+            <div className="filter flex justify-center">
                 <div className="search m-4 p-4">
                     <input type="text" 
-                           className=" border border-solid border-black" 
+                           className=" p-2 w-96 h-10 border border-solid border-black rounded-md" 
+                           data-testid = "searchInput"
+                           placeholder="Search for restaurants"
                            value = {searchText} 
                            onChange={(e) => {
                                 setSearchText(e.target.value);
@@ -69,30 +74,19 @@ export const Body = () => {
                     }}>Search</button> 
                     
                 </div>
-                <div className="search m-4 p-4 items-center">
-                    <button 
-                        className="filter-btn px-4 py-2 m-4 bg-gray-100 rounded-lg" 
-                        onClick={() => {
-                            // filter data
-                            const filteredList = 
-                            listOfRestaurants.filter((res) => res.info.avgRating > 4.3)
-                                setFilteredListOfRestaurants(filteredList)
-                            console.log(listOfRestaurants)
-                        }
-                    }
-                    >
-                        Top Rated Restaurants
-                    </button>
-                </div>
+                {/* <div className="search m-4 p-4 items-center">
+                    <label>UserName : </label>
+                    <input className="border border-black p-2" onChange={(e) => {
+                        setUserName(e.target.value)
+                    }}>{}</input>
+                </div> */}
                 
             </div>
 
-            <div className=" flex flex-wrap">
+            <div className=" flex flex-wrap justify-center">
                 { filteredListOfRestaurants.map(restaurant => 
-                    (restaurant.info.sla.deliveryTime < 22) ? 
-                        <RestaurantCardWithLabel key={restaurant.info.id} resData = {restaurant}/>
-                   :
-                        <RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/>
+                    (restaurant.info.sla.deliveryTime == 22 ? <RestaurantCardPromoted  key={restaurant.info.id} resData = {restaurant}/> : 
+                                <RestaurantCardComponent key={restaurant.info.id} resData = {restaurant}/> )
                 )}
             </div>
         </div>

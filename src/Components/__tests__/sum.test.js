@@ -1,0 +1,8 @@
+const { sum } = require("../sum")
+
+test("Sum of two numbers", () => {
+    const result = sum(3,4);
+
+    // Assertion
+    expect(result).toBe(7)
+})
