@@ -6,10 +6,10 @@ const ItemList = ({items}) => {
 
     const cartItems = useSelector((store) => store.cart.items)
 
-    console.log(cartItems)
+    // console.log(cartItems)
 
     const dispatch = useDispatch();
-    console.log(items)
+    // console.log(items)
 
     const handleAddItem = (item) => {
         // Dispatch an action

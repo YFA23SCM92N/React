@@ -9,7 +9,7 @@ const RestaurantCardComponent =  (props) => {
         <div data-testid="resCard" className="w-72 m-2 p-2 h-full cursor-pointer hover:shadow-md shadow-slate-200" >
             <Link to={"/restaurants/" + id}>
                 <div>
-                    {console.log(cloudinaryImageId)}
+                    {/* {console.log(cloudinaryImageId)} */}
                     <img className = "h-40 w-11/12 rounded-lg"
                         alt = "res-logo"
                         src = {CDN_URL + cloudinaryImageId}

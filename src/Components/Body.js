@@ -36,7 +36,7 @@ export const Body = () => {
           const restaurantList = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
           setFilteredListOfRestaurants(restaurantList);
           setListOfRestaurants(restaurantList);
-          console.log(restaurantList);
+        //   console.log(restaurantList);
 
     }
 
@@ -70,7 +70,7 @@ export const Body = () => {
                         var filteredRestaurants = 
                             listOfRestaurants.filter((res) => res.info.name.toLowerCase().includes(searchText.toLocaleLowerCase()));
                         setFilteredListOfRestaurants(filteredRestaurants);
-                        console.log(filteredRestaurants);
+                        // console.log(filteredRestaurants);
                     }}>Search</button> 
                     
                 </div>

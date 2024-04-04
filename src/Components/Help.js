@@ -31,7 +31,7 @@ const Help = () => {
 
         setOnBoardingData(questions)
 
-        console.log(questions)
+        // console.log(questions)
     }
 
 
