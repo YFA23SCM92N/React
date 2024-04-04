@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YaswanthMahesh/React.git"
+    "url": "git+https://github.com/YaswanthMahesh/Chefs-Kitchen"
   },
   "keywords": [],
   "author": "yashu",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/YaswanthMahesh/React/issues"
+    "url": "https://github.com/YaswanthMahesh/Chefs-Kitchen/issues"
   },
-  "homepage": "https://github.com/YaswanthMahesh/React#readme",
+  "homepage": "https://github.com/YaswanthMahesh/Chefs-Kitchent#readme",
   "devDependencies": {
     "@babel/core": "^7.24.3",
     "@babel/preset-env": "^7.24.3",
