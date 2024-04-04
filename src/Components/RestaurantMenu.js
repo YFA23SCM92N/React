@@ -14,7 +14,11 @@ const RestaurantMenu = () => {
     const [showIndex, setShowIndex] = useState(null);
 
     if(resInfo == null)
-        return <Shimmer />
+        return (
+            <div className="min-h-[45vh]">
+                <Shimmer />
+            </div>
+    )
 
     const {name, cuisines, costForTwoMessage} = 
             resInfo?.cards[2]?.card?.card?.info
@@ -27,26 +31,29 @@ const RestaurantMenu = () => {
 
 
     return (
-        <div className=" text-center">
-            <h1 className="font-bold my-10 text-2xl">{name}</h1>
-            <p className=" font-bold text-lg">
-                {cuisines.join(", ")} - {costForTwoMessage}
-            </p>
+        <div className="min-h-[45vh]">
+            <div className=" text-center">
+                <h1 className="font-bold my-10 text-2xl">{name}</h1>
+                <p className=" font-bold text-lg">
+                    {cuisines.join(", ")} - {costForTwoMessage}
+                </p>
 
-            {/* Categories accordians */}
+                {/* Categories accordians */}
 
-            {categories.map((category, index) => 
-                <RestaurantCategory 
-                    key={category?.card?.card?.title} 
-                    data = {category?.card?.card} 
-                    showItems = {index == showIndex ? true : false}
-                    setShowIndex = {() => 
-                        setShowIndex(index === showIndex ? null : index)
-                        }
-                />
-            )}
+                {categories.map((category, index) => 
+                    <RestaurantCategory 
+                        key={category?.card?.card?.title} 
+                        data = {category?.card?.card} 
+                        showItems = {index == showIndex ? true : false}
+                        setShowIndex = {() => 
+                            setShowIndex(index === showIndex ? null : index)
+                            }
+                    />
+                )}
             
+            </div>
         </div>
+        
     )
 }
 
