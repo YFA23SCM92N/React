@@ -41,8 +41,7 @@ The application allows users to browse various restaurants and their menus, pric
 ### Technologies Used
 - React
 - JavaScript
-- HTML
-- CSS
+- Tailwind CSS
 
 ### Installation
 1. Clone the repository.
