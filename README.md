@@ -4,13 +4,39 @@ This is a front-end React application for an online food ordering platform.
 ### Overview
 The application allows users to browse various restaurants and their menus, prices, delivery times, ratings, and other details. It fetches restaurant data from an online food ordering platform and displays it in the application.
 
+## Build Tools
+- Dev Build
+- Local Server
+- HMR = Hot Module Replacement
+- File Watching Algorithm - written in C++
+- Caching - Faster builds
+- Image optimization
+- Minification
+- Bundling
+- Compress
+- Copnsistent Hashing
+- Code Splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs
+- Tree Shaking - remove unused code
+- Diff dev and prod bundles
+
 ### Features
-- Home: Displays all available restaurants. Includes search functionality and a filter for top-rated restaurants.
-- Restaurant Pages: Clicking on a restaurant redirects to its specific page, showing available food items and their costs.
-- AboutUs: Provides information about the application administrators.
-- Contact: Displays contact details of the app administrators and ways to reach out to them.
-- Cart: Allows users to add items to their cart for ordering.
-- Login and Logout: Enables users to log in and out of the application.
+- Menu App:
+ - Developed a responsive food Menu app utilizing React, Redux, and Tailwind CSS.
+ - Integrated hooks, custom hooks, context, and React routing to streamline the ordering process for users.
+ - Prioritized a seamless and enhanced user experience.
+
+- Cart Functionality:
+ - Established efficient cart functionality using Redux, ensuring seamless state management.
+ - Facilitated smooth item addition and maintained consistent data synchronization across all components.
+
+- Testing:
+ - Ensured application reliability and stability by implementing comprehensive Jest unit testing.
+ - Achieved close to 80% test coverage, validating the application's functionality effectively.
+
 
 ### Technologies Used
 - React
