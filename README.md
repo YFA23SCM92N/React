@@ -25,9 +25,9 @@ The application allows users to browse various restaurants and their menus, pric
 
 ### Features
 - Menu App:
- - Developed a responsive food Menu app utilizing React, Redux, and Tailwind CSS.
- - Integrated hooks, custom hooks, context, and React routing to streamline the ordering process for users.
- - Prioritized a seamless and enhanced user experience.
+  - Developed a responsive food Menu app utilizing React, Redux, and Tailwind CSS.
+  - Integrated hooks, custom hooks, context, and React routing to streamline the ordering process for users.
+  - Prioritized a seamless and enhanced user experience.
 
 - Cart Functionality:
  - Established efficient cart functionality using Redux, ensuring seamless state management.
