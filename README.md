@@ -30,12 +30,12 @@ The application allows users to browse various restaurants and their menus, pric
   - Prioritized a seamless and enhanced user experience.
 
 - Cart Functionality:
- - Established efficient cart functionality using Redux, ensuring seamless state management.
- - Facilitated smooth item addition and maintained consistent data synchronization across all components.
+  - Established efficient cart functionality using Redux, ensuring seamless state management.
+  - Facilitated smooth item addition and maintained consistent data synchronization across all components.
 
 - Testing:
- - Ensured application reliability and stability by implementing comprehensive Jest unit testing.
- - Achieved close to 80% test coverage, validating the application's functionality effectively.
+  - Ensured application reliability and stability by implementing comprehensive Jest unit testing.
+  - Achieved close to 80% test coverage, validating the application's functionality effectively.
 
 
 ### Technologies Used
